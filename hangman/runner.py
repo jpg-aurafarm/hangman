@@ -1,5 +1,5 @@
 from hangman.io import IOInterface
-from hangman.constants import TEXTS, MENU_ART_LOGO, MenuChoiceResult
+from hangman.constants import TEXTS, MENU_ART_LOGO, MenuChoiceResult, HANGMAN_ART
 from hangman.session import GameSession, GameStepResult, SessionState
 
 class Runner:
@@ -58,7 +58,7 @@ class Runner:
         view = self.session.get_view()
         self.io.clear()
         self.io.output(view["masked"])
-        self.io.output(view["hangman_art"])
+        self.io.output(HANGMAN_ART[view["wrong"]])
         self.io.output(TEXTS["stats_errors"].format(view["wrong"], view["max_wrong"]))
         if view["called_letters"]:
             self.io.output(TEXTS["called_chars"].format(view["called_letters"]))

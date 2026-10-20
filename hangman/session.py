@@ -87,7 +87,6 @@ class GameSession:
             "masked": self.game.get_masked_word(),
             "wrong": self.game.wrong_count,
             "max_wrong": self.game.max_wrong,
-            "hangman_art": HANGMAN_ART[self.game.wrong_count],
             "called_letters": called,
             "won": self.game.is_won(),
             "lost": self.game.is_lost(),
